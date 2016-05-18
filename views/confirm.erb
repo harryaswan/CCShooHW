@@ -1,0 +1,36 @@
+<div class="panel panel-default col-md-6">
+<% if @saved %>
+    <div class="panel-heading">Congrats!</div>
+    <div class="panel-body">
+        <p>You have just ordered yourself a brand new pair of shoo's!</p>
+        <p>Your details have now been saved:</p>
+    </div>
+<% else %>
+    <div class="panel-heading">Just about there...</div>
+    <div class="panel-body">
+        <p>Please ensure your details are correct:</p>
+    </div>
+<% end %>
+
+    <ul class="list-group col-md-6">
+        <li class="list-group-item">Name: <%= @preorder.name %></li>
+        <li class="list-group-item">Address: <%= @preorder.address %></li>
+        <li class="list-group-item">Quantity: <%= @preorder.quantity %></li>
+        <li class="list-group-item">Size: <%= @preorder.size %></li>
+
+        <% if !@saved %>
+            <li class="list-group-item">
+                    <form action="" method="post">
+                        <input type="hidden" name="name" value="<%= @preorder.name %>">
+                        <input type="hidden" name="address" value="<%= @preorder.address %>">
+                        <input type="hidden" name="quantity" value="<%= @preorder.quantity %>">
+                        <input type="hidden" name="size" value="<%= @preorder.size %>">
+                        <a class="form-control col-md-3" href="/">Cancel Order</a><input type="submit" class='form-control col-md-3' name="save_order" value="Yes, Save my Order">
+                    </form>
+            </li>
+        <% end %>
+
+
+
+    </ul>
+</div>

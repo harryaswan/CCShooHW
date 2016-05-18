@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Look at all the people wanting Shoo's!</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">Name</div>
+        <div class="col-md-2">Address</div>
+        <div class="col-md-2">Quantity</div>
+        <div class="col-md-2">Size</div>
+    </div>
+    <% for o in @preorders %>
+        <div class="row">
+            <div class="col-md-2"><%= o.name %></div>
+            <div class="col-md-2"><%= o.address %></div>
+            <div class="col-md-2"><%= o.quantity %></div>
+            <div class="col-md-2"><%= o.size %></div>
+        </div>
+    <% end %>
+</div>
